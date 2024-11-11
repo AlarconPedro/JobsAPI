@@ -190,99 +190,91 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
             string nomes = "";
             foreach (var itemContasReceber in contasReceber)
             {
-                //IEnumerable<TbRateiocontasreceber> produtoCongelar = await _dbRateioContasReceber
+                var produtosCliente = await _dbRateioContasReceber
+                    .Where(rcr => rcr.CtrCodigo.Equals(itemContasReceber.CtrCodigo))
+                    .Select(rcr => rcr.RatCodigoNavigation.RatAlias).ToListAsync();
+
+                foreach (var produto in produtosCliente)
+                {
+                    IEnumerable<TbProdutoChave> chavesCongelamento = await _dbProdutoCliente
+                        .Where(pc => pc.ProCodigoNavigation.ProAlias.Equals(produto)
+                            && (pc.PesCodigoNavigation.PesStatus.Equals("A") && pc.PesCodigoNavigation.PesCliente.Equals("S")))
+                        .SelectMany(pc => pc.TbProdutoChaves).ToListAsync();
+
+                    foreach (var congelar in chavesCongelamento)
+                    {
+                        try
+                        {
+                            TbCongelamento congelamentos = new TbCongelamento();
+                            congelamentos.ChaCodigo = congelar.ChaCodigo;
+                            congelamentos.CngStatus = "A";
+                            congelamentos.CngCongelado = false;
+                            congelamentos.CngAvisocobranca = false;
+                            congelamentos.CngAvisocongelamento = false;
+                            congelamentos.CngAvisoprotesto = false;
+                            congelamentos.CngDataavisocobranca = DateTime.Parse(itemContasReceber.CtrDatavencimento.Value.AddDays(5).ToString());
+                            congelamentos.CngDataavisocongelamento = DateTime.Parse(itemContasReceber.CtrDatavencimento.Value.AddDays(10).ToString());
+                            congelamentos.CngDataavisoprotesto = DateTime.Parse(itemContasReceber.CtrDatavencimento.Value.AddDays(30).ToString());
+                            congelamentos.CngDatacongelamento = DateTime.Parse(itemContasReceber.CtrDatavencimento.Value.AddDays(15).ToString());
+                            congelamentos.CngDescricao = "Devedor adicionado via Job.";
+                            congelamentos.PesCodigo = itemContasReceber.PesCodigo;
+                            congelamentos.CtrCodigo = itemContasReceber.CtrCodigo;
+                            congelamentos.CtrCodigoNavigation = itemContasReceber;
+                            congelamentos.ProcliCodigo = congelar.ProcliCodigo;
+                            await InserirCongelamento(congelamentos);
+
+                        }
+                        catch (Exception e)
+                        {
+                            throw new Exception(e.Message);
+                        }
+                        nomes += itemContasReceber.PesCodigoNavigation.PesNome + ", ";
+                    }
+                }
+
+                //IEnumerable<TbRateiocontasreceber> produtoRateio = await _dbRateioContasReceber
                 //    .Where(rcr => rcr.CtrCodigo.Equals(itemContasReceber.CtrCodigo)
                 //        && rcr.RatCodigoNavigation.RatAlias
                 //            .Equals(itemContasReceber.PesCodigoNavigation.TbProdutoClientes
-                //                .Select(pc => pc.ProCodigoNavigation.ProAlias).FirstOrDefault())
-                //        && rcr.CtrCodigoNavigation.PesCodigo.Equals(itemContasReceber.PesCodigo))
+                //                .Select(pc => pc.ProCodigoNavigation.ProAlias).FirstOrDefault()))
                 //    .ToListAsync();
 
-                IEnumerable<TbProdutoChave> chavesCongelamento = await _dbProdutoCliente.Where(pc => pc.ProCodigoNavigation.ProAlias
-                        .Equals(itemContasReceber.PesCodigoNavigation.TbProdutoClientes
-                            .Select(pc => pc.ProCodigoNavigation.ProAlias).FirstOrDefault())
-                        && (pc.PesCodigoNavigation.PesStatus.Equals("A") && pc.PesCodigoNavigation.PesCliente.Equals("S")))
-                    .SelectMany(pc => pc.TbProdutoChaves).ToListAsync();
-
-                foreach (var congelar in chavesCongelamento)
-                {
-                    try
-                    {
-                        TbCongelamento congelamentos = new TbCongelamento();
-                        congelamentos.ChaCodigo = congelar.ChaCodigo;
-                        congelamentos.CngStatus = "A";
-                        congelamentos.CngCongelado = false;
-                        congelamentos.CngAvisocobranca = false;
-                        congelamentos.CngAvisocongelamento = false;
-                        congelamentos.CngAvisoprotesto = false;
-                        congelamentos.CngDataavisocobranca = DateTime.Parse(itemContasReceber.CtrDatavencimento.Value.AddDays(5).ToString());
-                        congelamentos.CngDataavisocongelamento = DateTime.Parse(itemContasReceber.CtrDatavencimento.Value.AddDays(10).ToString());
-                        congelamentos.CngDataavisoprotesto = DateTime.Parse(itemContasReceber.CtrDatavencimento.Value.AddDays(30).ToString());
-                        congelamentos.CngDatacongelamento = DateTime.Parse(itemContasReceber.CtrDatavencimento.Value.AddDays(15).ToString());
-                        congelamentos.CngDescricao = "Devedor adicionado via Job.";
-                        congelamentos.PesCodigo = itemContasReceber.PesCodigo;
-                        congelamentos.CtrCodigo = itemContasReceber.CtrCodigo;
-                        congelamentos.CtrCodigoNavigation = itemContasReceber;
-                        congelamentos.ProcliCodigo = congelar.ProcliCodigo;
-                        await InserirCongelamento(congelamentos);
-
-                    } catch (Exception e)
-                {
-                    throw new Exception(e.Message);
-                }
-                nomes += itemContasReceber.PesCodigoNavigation.PesNome + ", ";
-                //nomes.Add(congelar.PesCodigoNavigation.PesNome);
-                }
-
-                //try
+                //foreach (var rateio in produtoRateio)
                 //{
-                //    //await congelamentoService.CongelarChaves(congelar.CtrCodigo);
-                //    DateTime dataAtual = DateTime.Now;
-                //    TbCongelamento congelamento = new TbCongelamento();
-                //    congelamento.ChaCodigo = _dbProdutoChave
-                //        .Where(pc => pc.ProcliCodigoNavigation.PesCodigo
-                //        .Equals(congelar.PesCodigo)).Select(pc => pc.ChaCodigo).FirstOrDefault();
-                //    congelamento.CngStatus = "A";
-                //    congelamento.CngCongelado = false;
-                //    congelamento.CngAvisocobranca = false;
-                //    congelamento.CngAvisocongelamento = false;
-                //    congelamento.CngAvisoprotesto = false;
-                //    congelamento.CngDataavisocobranca = dataAtual.AddDays(5);
-                //    congelamento.CngDataavisocongelamento = dataAtual.AddDays(10);
-                //    congelamento.CngDataavisoprotesto = dataAtual.AddDays(30);
-                //    congelamento.CngDatacongelamento = dataAtual.AddDays(15);
-                //    congelamento.CngDescricao = "Devedor adicionado via Job.";
-                //    congelamento.PesCodigo = congelar.PesCodigo;
-                //    congelamento.CtrCodigo = congelar.CtrCodigo;
-                //    congelamento.CtrCodigoNavigation = congelar;
-                //    congelamento.ProcliCodigo = _dbProdutoChave
-                //            .Where(pc => pc.ProcliCodigoNavigation.PesCodigo
-                //            .Equals(congelar.PesCodigo)).Select(pc => pc.ProcliCodigo).FirstOrDefault();
-                //    await InserirCongelamento(congelamento);
+                //    IEnumerable<TbProdutoChave> chavesCongelamento = await _dbProdutoCliente
+                //        .Where(pc => pc.ProCodigoNavigation.ProAlias.Equals(rateio)
+                //            && (pc.PesCodigoNavigation.PesStatus.Equals("A") && pc.PesCodigoNavigation.PesCliente.Equals("S")))
+                //        .SelectMany(pc => pc.TbProdutoChaves).ToListAsync();
 
-                //    //{
-                //    //    CngCodigo = _dbCongelamento.FirstOrDefault() != null ? 1 : (_dbCongelamento.Max(c => c.CngCodigo) + 1),
-                //    //    ChaCodigo = _dbProdutoChave
-                //    //            .Where(pc => pc.ProcliCodigoNavigation.PesCodigo
-                //    //            .Equals(congelar.PesCodigo)).Select(pc => pc.ChaCodigo).FirstOrDefault(),
-                //    //    CngStatus = "A",
-                //    //    CngCongelado = false,
-                //    //    CngAvisocobranca = false,
-                //    //    CngAvisocongelamento = false,
-                //    //    CngAvisoprotesto = false,
-                //    //    CngDataavisocobranca = dataAtual.AddDays(5),
-                //    //    CngDataavisocongelamento = dataAtual.AddDays(10),
-                //    //    CngDataavisoprotesto = dataAtual.AddDays(30),
-                //    //    CngDatacongelamento = dataAtual.AddDays(15),
-                //    //    CngDescricao = "Devedor adicionado via Job.",
-                //    //    PesCodigo = congelar.PesCodigo,
-                //    //    ProcliCodigo = _dbProdutoChave
-                //    //            .Where(pc => pc.ProcliCodigoNavigation.PesCodigo
-                //    //            .Equals(congelar.PesCodigo)).Select(pc => pc.ProcliCodigo).FirstOrDefault()
-                //    //};
-                //    //await InserirCongelamento(congelamento);
-                //    //Enviar Email de Aviso de Cobrança
-                //    //email.enviaEmail(congelar.PesCodigoNavigation.PesNome);
+                //    foreach (var congelar in chavesCongelamento)
+                //    {
+                //        try
+                //        {
+                //            TbCongelamento congelamentos = new TbCongelamento();
+                //            congelamentos.ChaCodigo = congelar.ChaCodigo;
+                //            congelamentos.CngStatus = "A";
+                //            congelamentos.CngCongelado = false;
+                //            congelamentos.CngAvisocobranca = false;
+                //            congelamentos.CngAvisocongelamento = false;
+                //            congelamentos.CngAvisoprotesto = false;
+                //            congelamentos.CngDataavisocobranca = DateTime.Parse(itemContasReceber.CtrDatavencimento.Value.AddDays(5).ToString());
+                //            congelamentos.CngDataavisocongelamento = DateTime.Parse(itemContasReceber.CtrDatavencimento.Value.AddDays(10).ToString());
+                //            congelamentos.CngDataavisoprotesto = DateTime.Parse(itemContasReceber.CtrDatavencimento.Value.AddDays(30).ToString());
+                //            congelamentos.CngDatacongelamento = DateTime.Parse(itemContasReceber.CtrDatavencimento.Value.AddDays(15).ToString());
+                //            congelamentos.CngDescricao = "Devedor adicionado via Job.";
+                //            congelamentos.PesCodigo = itemContasReceber.PesCodigo;
+                //            congelamentos.CtrCodigo = itemContasReceber.CtrCodigo;
+                //            congelamentos.CtrCodigoNavigation = itemContasReceber;
+                //            congelamentos.ProcliCodigo = congelar.ProcliCodigo;
+                //            await InserirCongelamento(congelamentos);
+
+                //        }
+                //        catch (Exception e)
+                //        {
+                //            throw new Exception(e.Message);
+                //        }
+                //        nomes += itemContasReceber.PesCodigoNavigation.PesNome + ", ";
+                //    }
                 //}
             }
             email.enviaEmail(nomes, "AvisoCobranca");
