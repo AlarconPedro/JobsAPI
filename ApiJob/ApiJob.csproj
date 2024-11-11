@@ -21,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\JobWeb.Infra.IoC\JobWeb.Infra.IoC.csproj" />
   </ItemGroup>
 

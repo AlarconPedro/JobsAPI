@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Core\\JobWeb.Core.csproj",
+      "projectUniqueName": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\JobWeb.Core.csproj",
       "projectName": "JobWeb.Core",
-      "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Core\\JobWeb.Core.csproj",
+      "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\JobWeb.Core.csproj",
       "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-      "outputPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Core\\obj\\",
+      "outputPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",

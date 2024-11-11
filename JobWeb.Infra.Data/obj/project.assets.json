@@ -5681,11 +5681,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj",
+      "projectUniqueName": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj",
       "projectName": "JobWeb.Infra.Data",
-      "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj",
+      "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj",
       "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-      "outputPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.Data\\obj\\",
+      "outputPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5703,8 +5703,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Core\\JobWeb.Core.csproj": {
-              "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Core\\JobWeb.Core.csproj"
+            "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\JobWeb.Core.csproj": {
+              "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\JobWeb.Core.csproj"
             }
           }
         }

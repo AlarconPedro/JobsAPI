@@ -4,9 +4,12 @@ using Hangfire;
 using Hangfire.MemoryStorage;
 using JobWeb.Core.Interfaces;
 using JobWeb.Core.Interfaces.Services;
+using JobWeb.Core.Interfaces.Services.Data;
+using JobWeb.Core.Interfaces.Services.Entities;
 using JobWeb.Infra.Data.Context;
-using JobWeb.Infra.Data.Repositories;
 using JobWeb.Infra.Data.Services;
+using JobWeb.Infra.Data.Services.Data;
+using JobWeb.Infra.Data.Services.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
@@ -25,9 +28,10 @@ public static class DI
             options.UseSqlServer(configuration.GetConnectionString(connectionString), 
                 b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)));
 
-        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-        services.AddScoped(typeof(ICongelamentoRespository<>), typeof(CongelamentoRepository<>));
-        services.AddScoped<IJobRepository, JobService>();
+        services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
+        services.AddScoped(typeof(ICongelamentoService<>), typeof(CongelamentoService<>));
+        services.AddScoped(typeof(IProdutoService<>), typeof(ProdutosService<>));
+        services.AddScoped<IJobService, JobService>();
         
         //services.AddScoped(typeof(IJobRepository<>), typeof(JobService<>));
 

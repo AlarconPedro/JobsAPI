@@ -1,6 +1,6 @@
 ﻿using Hangfire;
 
-namespace ApiJob.Servicos;
+namespace JobWeb.Infra.Data;
 
 public class Jobs
 {

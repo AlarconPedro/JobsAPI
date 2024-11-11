@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JobWeb.Core.Interfaces.Services;
+namespace JobWeb.Core.Interfaces.Services.Data;
 
-public interface ICongelamentoRespository<T> : IGenericRepository<T> where T : class
+public interface ICongelamentoService<T> : IGenericService<T> where T : class
 {
     Task<(int, T?)> BuscarCodigoChave(int cngCodigo);
     Task LiberarChaves(int cngCodigo);

@@ -2,6 +2,8 @@ using ApiJob.Configuration;
 using Hangfire;
 using JobWeb.Core.Interfaces.Services;
 using JobWeb.Infra.Data.Repositories;
+using JobWeb.Infra.Data.Services.Data;
+using JobWeb.Infra.Data.Services.Entities;
 using JobWeb.Infra.IoC;
 using Microsoft.AspNetCore.Mvc;
 
@@ -49,11 +51,37 @@ app.MapGet("/Devedores", ([FromServices] JobService job) => job.VerificaDevedore
 app.MapGet("/Congelados", ([FromServices] JobService job) => job.VerificaCongelados());
 
 
-//Ações
+////////////////////////////////////////////Ações Congelamento//////////////////////////////////////////
 app.MapGet("/Descongelar/{cngCodigo:int}", ([FromServices] JobService job, int cngCodigo) => job.LiberarChaves(cngCodigo));
 app.MapGet("/Congelar/{cngCodigo:int}", ([FromServices] JobService job, int cngCodigo) => job.CongelarChaves(cngCodigo));
 app.MapGet("/Inativar/{cngCodigo:int}", ([FromServices] JobService job, int cngCodigo) => job.InativarCongelamento(cngCodigo));
 app.MapGet("/Ativar/{cngCodigo:int}", ([FromServices] JobService job, int cngCodigo) => job.AtivarCongelamento(cngCodigo));
+
+////////////////////////////////////////////Ações Produtos//////////////////////////////////////////////
+//GET ALL
+app.MapGet("/Produtos", ([FromServices] ProdutosService<TbProduto> produto) => produto.GetAll());
+app.MapGet("/ProdutosCliente", ([FromServices] ProdutosService<TbProdutoCliente> produto) => produto.GetAll());
+app.MapGet("/ChavesProdutos", ([FromServices] ProdutosService<TbProdutoChave> produto) => produto.GetAll());
+
+//GET BY ID
+app.MapGet("/Produtos/{id:int}", ([FromServices] ProdutosService<TbProduto> produto, int id) => produto.GetById(id));
+app.MapGet("/ProdutosCliente/{id:int}", ([FromServices] ProdutosService<TbProdutoCliente> produto, int id) => produto.GetById(id));
+app.MapGet("/ChavesProdutos/{id:int}", ([FromServices] ProdutosService<TbProdutoChave> produto, int id) => produto.GetById(id));
+
+//POST
+app.MapPost("/Produtos", ([FromServices] ProdutosService<TbProduto> produto, [FromBody] TbProduto prod) => produto.Add(prod));
+app.MapPost("/ProdutosCliente", ([FromServices] ProdutosService<TbProdutoCliente> produto, [FromBody] TbProdutoCliente prod) => produto.Add(prod));
+app.MapPost("/ChavesProdutos", ([FromServices] ProdutosService<TbProdutoChave> produto, [FromBody] TbProdutoChave prod) => produto.Add(prod));
+
+//PUT
+app.MapPut("/Produtos", ([FromServices] ProdutosService<TbProduto> produto, [FromBody] TbProduto prod) => produto.Update(prod));
+app.MapPut("/ProdutosCliente", ([FromServices] ProdutosService<TbProdutoCliente> produto, [FromBody] TbProdutoCliente prod) => produto.Update(prod));
+app.MapPut("/ChavesProdutos", ([FromServices] ProdutosService<TbProdutoChave> produto, [FromBody] TbProdutoChave prod) => produto.Update(prod));
+
+//DELETE
+app.MapDelete("/Produtos", ([FromServices] ProdutosService<TbProduto> produto, [FromBody] TbProduto prod) => produto.Delete(prod.ProCodigo));
+app.MapDelete("/ProdutosCliente", ([FromServices] ProdutosService<TbProdutoCliente> produto, [FromBody] TbProdutoCliente prod) => produto.Delete(prod.ProcliCodigo));
+app.MapDelete("/ChavesProdutos", ([FromServices] ProdutosService<TbProdutoChave> produto, [FromBody] TbProdutoChave prod) => produto.Delete(prod.ChaCodigo));
 
 //app.MapControllers();
 

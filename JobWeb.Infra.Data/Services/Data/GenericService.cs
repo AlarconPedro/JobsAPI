@@ -10,9 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JobWeb.Infra.Data.Repositories;
+namespace JobWeb.Infra.Data.Services.Data;
 
-public class GenericRepository<T> : IGenericRepository<T> where T : class
+public class GenericService<T> : IGenericService<T> where T : class
 {
     private readonly static CacheTech cacheTech = CacheTech.Memory;
     private readonly string cacheKey = $"{typeof(T)}";
@@ -20,7 +20,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
     private readonly AppDbContext _context;
     private readonly Func<CacheTech, ICacheService> _cacheService;
 
-    public GenericRepository(AppDbContext context, Func<CacheTech, ICacheService> cacheService)
+    public GenericService(AppDbContext context, Func<CacheTech, ICacheService> cacheService)
     {
         _context = context;
         _cacheService = cacheService;
@@ -34,7 +34,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         {
             cachedList = await _context.Set<T>().ToListAsync();
             _cacheService(cacheTech).set(cacheKey, cachedList);
-        }        
+        }
         return cachedList;
     }
 

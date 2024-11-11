@@ -6137,11 +6137,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desenvolvimento\\C#\\Prototipos\\ApiJob\\ApiJob.csproj",
+      "projectUniqueName": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\ApiJob.csproj",
       "projectName": "ApiJob",
-      "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\ApiJob\\ApiJob.csproj",
+      "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\ApiJob.csproj",
       "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-      "outputPath": "D:\\Desenvolvimento\\C#\\Prototipos\\ApiJob\\obj\\",
+      "outputPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6159,8 +6159,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.IoC\\JobWeb.Infra.IoC.csproj": {
-              "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.IoC\\JobWeb.Infra.IoC.csproj"
+            "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.IoC\\JobWeb.Infra.IoC.csproj": {
+              "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.IoC\\JobWeb.Infra.IoC.csproj"
             }
           }
         }

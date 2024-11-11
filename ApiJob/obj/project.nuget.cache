@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F6UK/Vf7KyM=",
+  "dgSpecHash": "qjNvabz6J3g=",
   "success": true,
-  "projectFilePath": "D:\\Desenvolvimento\\C#\\Prototipos\\ApiJob\\ApiJob.csproj",
+  "projectFilePath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\ApiJob.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pedro\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Pedro\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -1,26 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Desenvolvimento\\C#\\Prototipos\\ApiJob\\",
+  "WorkspaceRootPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C4009A90-4B0E-4603-A674-6482013865F2}|..\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj|d:\\desenvolvimento\\c#\\prototipos\\jobweb.infra.data\\repositories\\congelamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4009A90-4B0E-4603-A674-6482013865F2}|..\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj|d:\\desenvolvimento\\c#\\prototipos\\jobapi\\jobweb.infra.data\\services\\data\\congelamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF8D99D3-4C7C-41F8-937C-D4081918BA80}|ApiJob.csproj|d:\\desenvolvimento\\c#\\prototipos\\apijob\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C4009A90-4B0E-4603-A674-6482013865F2}|..\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj|d:\\desenvolvimento\\c#\\prototipos\\jobapi\\jobweb.infra.data\\services\\data\\validacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8D99D3-4C7C-41F8-937C-D4081918BA80}|ApiJob.csproj|d:\\desenvolvimento\\c#\\prototipos\\jobapi\\apijob\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AF8D99D3-4C7C-41F8-937C-D4081918BA80}|ApiJob.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4009A90-4B0E-4603-A674-6482013865F2}|..\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj|d:\\desenvolvimento\\c#\\prototipos\\jobweb.infra.data\\services\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{807B4D0B-9EE1-4170-8F72-56F98277D0A0}|..\\JobWeb.Infra.IoC\\JobWeb.Infra.IoC.csproj|d:\\desenvolvimento\\c#\\prototipos\\jobapi\\jobweb.infra.ioc\\di.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{807B4D0B-9EE1-4170-8F72-56F98277D0A0}|..\\JobWeb.Infra.IoC\\JobWeb.Infra.IoC.csproj|d:\\desenvolvimento\\c#\\prototipos\\jobweb.infra.ioc\\di.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4009A90-4B0E-4603-A674-6482013865F2}|..\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj|d:\\desenvolvimento\\c#\\prototipos\\jobweb.infra.data\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AF8D99D3-4C7C-41F8-937C-D4081918BA80}|ApiJob.csproj|d:\\desenvolvimento\\c#\\prototipos\\apijob\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AF8D99D3-4C7C-41F8-937C-D4081918BA80}|ApiJob.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{C4009A90-4B0E-4603-A674-6482013865F2}|..\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj|d:\\desenvolvimento\\c#\\prototipos\\jobapi\\jobweb.infra.data\\services\\data\\jobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,77 +39,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CongelamentoRepository.cs",
-              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.Data\\Repositories\\CongelamentoRepository.cs",
-              "RelativeDocumentMoniker": "..\\JobWeb.Infra.Data\\Repositories\\CongelamentoRepository.cs",
-              "ToolTip": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.Data\\Repositories\\CongelamentoRepository.cs",
-              "RelativeToolTip": "..\\JobWeb.Infra.Data\\Repositories\\CongelamentoRepository.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAYwMIAAABKAAAAAAAAAA==",
+              "Title": "CongelamentoService.cs",
+              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\Services\\Data\\CongelamentoService.cs",
+              "RelativeDocumentMoniker": "..\\JobWeb.Infra.Data\\Services\\Data\\CongelamentoService.cs",
+              "ToolTip": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\Services\\Data\\CongelamentoService.cs",
+              "RelativeToolTip": "..\\JobWeb.Infra.Data\\Services\\Data\\CongelamentoService.cs",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAYwPgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T20:13:26.347Z",
+              "WhenOpened": "2024-11-11T14:11:50.021Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\Prototipos\\ApiJob\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Desenvolvimento\\C#\\Prototipos\\ApiJob\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-08T19:44:49.045Z",
+              "DocumentIndex": 1,
+              "Title": "ValidacaoService.cs",
+              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\Services\\Data\\ValidacaoService.cs",
+              "RelativeDocumentMoniker": "..\\JobWeb.Infra.Data\\Services\\Data\\ValidacaoService.cs",
+              "ToolTip": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\Services\\Data\\ValidacaoService.cs",
+              "RelativeToolTip": "..\\JobWeb.Infra.Data\\Services\\Data\\ValidacaoService.cs",
+              "ViewState": "AgIAAAkBAAAAAAAAAAAEwCwBAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T13:41:55.523Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.Data\\Context\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "..\\JobWeb.Infra.Data\\Context\\AppDbContext.cs",
-              "ToolTip": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.Data\\Context\\AppDbContext.cs",
-              "RelativeToolTip": "..\\JobWeb.Infra.Data\\Context\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKMAAACmAAAAAAAAAA==",
+              "Title": "JobService.cs",
+              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\Services\\Data\\JobService.cs",
+              "RelativeDocumentMoniker": "..\\JobWeb.Infra.Data\\Services\\Data\\JobService.cs",
+              "ToolTip": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\Services\\Data\\JobService.cs",
+              "RelativeToolTip": "..\\JobWeb.Infra.Data\\Services\\Data\\JobService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T19:49:21.355Z",
+              "WhenOpened": "2024-11-11T13:38:26.566Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "DI.cs",
-              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.IoC\\DI.cs",
+              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.IoC\\DI.cs",
               "RelativeDocumentMoniker": "..\\JobWeb.Infra.IoC\\DI.cs",
-              "ToolTip": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.IoC\\DI.cs",
+              "ToolTip": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.IoC\\DI.cs",
               "RelativeToolTip": "..\\JobWeb.Infra.IoC\\DI.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAwwAwAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAgwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T19:46:58.763Z",
+              "WhenOpened": "2024-11-11T13:26:42.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "JobService.cs",
-              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.Data\\Services\\JobService.cs",
-              "RelativeDocumentMoniker": "..\\JobWeb.Infra.Data\\Services\\JobService.cs",
-              "ToolTip": "D:\\Desenvolvimento\\C#\\Prototipos\\JobWeb.Infra.Data\\Services\\JobService.cs",
-              "RelativeToolTip": "..\\JobWeb.Infra.Data\\Services\\JobService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T19:22:24.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\Prototipos\\ApiJob\\Program.cs",
+              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Desenvolvimento\\C#\\Prototipos\\ApiJob\\Program.cs",
+              "ToolTip": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAACUAAABYAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAFAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T14:12:26.838Z",
               "EditorCaption": ""

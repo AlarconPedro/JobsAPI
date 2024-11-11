@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JobWeb.Infra.IoC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1f44824a5c291a8568bd17b78281c95f861f7fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("JobWeb.Infra.IoC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JobWeb.Infra.IoC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
