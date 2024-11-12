@@ -59,10 +59,10 @@ public class GenericService<T> : IGenericService<T> where T : class
         BackgroundJob.Enqueue(() => RefreshCache());
     }
 
-    private void RefreshCache()
+    public async Task RefreshCache()
     {
         _cacheService(cacheTech).Remove(cacheKey);
-        var cachedList = _context.Set<T>().ToList();
+        var cachedList = await _context.Set<T>().ToListAsync();
         _cacheService(cacheTech).set(cacheKey, cachedList);
     }
 }
