@@ -32,48 +32,36 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
         _dbRateioContasReceber = context.Set<TbRateiocontasreceber>();
     }
 
-    public async Task<(int, TbCongelamento?)> BuscarCodigoChave(int cngCodigo)
-    {
-        TbCongelamento congelamento = await _dbCongelamento
-                        .Where(c => c.CngCodigo.Equals(cngCodigo)).FirstOrDefaultAsync();
-        int codigoChave = await _dbProdutoCliente
-             .Where(pc => pc.ProCodigoNavigation.ProCodigo.Equals(congelamento.ProcliCodigoNavigation.ProCodigo)
-                 && pc.TbProdutoChaves.Any(pc => pc.ChaCodigo.Equals(congelamento.ChaCodigo)))
-             .Select(x => x.TbProdutoChaves.Where(pc => pc.ChaCodigo.Equals(congelamento.ChaCodigo)).FirstOrDefault().ChaCodigo)
-             .FirstOrDefaultAsync();
-
-        return (codigoChave, congelamento);
-    }
+    public async Task<TbCongelamento> BuscarCodigoChave(int cngCodigo) => await _dbCongelamento.Where(c => c.CngCodigo.Equals(cngCodigo)).FirstOrDefaultAsync();
 
     public async Task LiberarChaves(int cngCodigo)
     {
-        (int, TbCongelamento?) dados = await BuscarCodigoChave(cngCodigo);
-        if (dados.Item1 != 0)
+        TbCongelamento dados = await BuscarCodigoChave(cngCodigo);
+        if (dados != null)
         {
-            TbProdutoChave chave = await _dbProdutoChave.Where(pc => pc.ChaCodigo.Equals(dados.Item1)).FirstOrDefaultAsync();
+            TbProdutoChave chave = await _dbProdutoChave.Where(pc => pc.ChaCodigo.Equals(dados.ChaCodigo)).FirstOrDefaultAsync();
             chave.ChaAtivo = true;
-            await Update(dados.Item2);
+            await Update(dados);
+            dados.CngCongelado = false;
+            await Update(dados);
         }
     }
 
     public async Task CongelarChaves(int cngCodigo)
     {
-        (int, TbCongelamento?) dados = await BuscarCodigoChave(cngCodigo);
-        if (dados.Item1 != 0)
+        TbCongelamento dados = await BuscarCodigoChave(cngCodigo);
+        if (dados != null)
         {
-            TbProdutoChave chave = await _dbProdutoChave.Where(pc => pc.ChaCodigo.Equals(dados.Item1)).FirstOrDefaultAsync();
+            TbProdutoChave chave = await _dbProdutoChave.Where(pc => pc.ChaCodigo.Equals(dados.ChaCodigo)).FirstOrDefaultAsync();
             chave.ChaAtivo = false;
-            await Update(dados.Item2);
+            await Update(dados);
+            dados.CngCongelado = true;
+            await Update(dados);
         }
     }
 
-    public async Task InserirCongelamento(TbCongelamento congelamento)
-    {
-        //congelamento.CngCodigo = await _dbCongelamento.FirstOrDefaultAsync() != null ? 1 : await _dbCongelamento.MaxAsync(c => c.CngCodigo) + 1;
-        await Add(congelamento);
-        //await CongelarChaves(congelamento.CngCodigo);
-    }
-
+    public async Task InserirCongelamento(TbCongelamento congelamento) => await Add(congelamento);
+    
     public async Task InativarCongelamento(int cngCodigo)
     {
         TbCongelamento congelamento = await _dbCongelamento
@@ -89,7 +77,7 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
                         .Where(c => c.CngCodigo.Equals(cngCodigo)).FirstOrDefaultAsync();
         congelamento.CngStatus = "A";
         await Update(congelamento);
-        await LiberarChaves(cngCodigo);
+        //await CongelarChaves(cngCodigo);
     }
 
     public async Task EnviaAvisos()
@@ -101,6 +89,7 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
             .ToListAsync();
         foreach (var congelamento in congelamentos)
         {
+            //Enviar email de avisos
             switch (dataAtual)
             {
                 case var d when d.Equals(congelamento.CngDataavisocobranca):
@@ -120,6 +109,7 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
                     break;
                 case var d when d.Equals(congelamento.CngDatacongelamento):
                     email.enviaEmail(congelamento.ProcliCodigoNavigation.PesCodigoNavigation.PesNome, "Congelamento");
+                    await CongelarChaves(congelamento.CngCodigo);
                     congelamento.CngCongelado = true;
                     await Update(congelamento);
                     break;

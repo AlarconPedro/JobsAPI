@@ -8,7 +8,7 @@ namespace JobWeb.Core.Interfaces.Services.Data;
 
 public interface ICongelamentoService<T> : IGenericService<T> where T : class
 {
-    Task<(int, T?)> BuscarCodigoChave(int cngCodigo);
+    Task<T?> BuscarCodigoChave(int cngCodigo);
     Task LiberarChaves(int cngCodigo);
     Task CongelarChaves(int cngCodigo);
     Task InserirCongelamento(T congelamento);
