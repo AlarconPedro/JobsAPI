@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_8",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_9",
     "RelativePath": "Ativar/{cngCodigo:int}",
     "HttpMethod": "GET",
     "IsController": false,
@@ -23,7 +23,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_11",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_12",
     "RelativePath": "ChavesProdutos",
     "HttpMethod": "GET",
     "IsController": false,
@@ -41,7 +41,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_17",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_18",
     "RelativePath": "ChavesProdutos",
     "HttpMethod": "POST",
     "IsController": false,
@@ -65,7 +65,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_20",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_21",
     "RelativePath": "ChavesProdutos",
     "HttpMethod": "PUT",
     "IsController": false,
@@ -87,7 +87,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_23",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_24",
     "RelativePath": "ChavesProdutos",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -109,7 +109,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_14",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_15",
     "RelativePath": "ChavesProdutos/{id:int}",
     "HttpMethod": "GET",
     "IsController": false,
@@ -151,7 +151,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_6",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_7",
     "RelativePath": "Congelar/{cngCodigo:int}",
     "HttpMethod": "GET",
     "IsController": false,
@@ -173,7 +173,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_5",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_6",
     "RelativePath": "Descongelar/{cngCodigo:int}",
     "HttpMethod": "GET",
     "IsController": false,
@@ -213,7 +213,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_7",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_8",
     "RelativePath": "Inativar/{cngCodigo:int}",
     "HttpMethod": "GET",
     "IsController": false,
@@ -235,7 +235,23 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_9",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_5",
+    "RelativePath": "InserirChaves",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Program\u002B\u003C\u003Ec",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_10",
     "RelativePath": "Produtos",
     "HttpMethod": "GET",
     "IsController": false,
@@ -253,7 +269,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_15",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_16",
     "RelativePath": "Produtos",
     "HttpMethod": "POST",
     "IsController": false,
@@ -277,7 +293,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_18",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_19",
     "RelativePath": "Produtos",
     "HttpMethod": "PUT",
     "IsController": false,
@@ -299,7 +315,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_21",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_22",
     "RelativePath": "Produtos",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -321,7 +337,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_12",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_13",
     "RelativePath": "Produtos/{id:int}",
     "HttpMethod": "GET",
     "IsController": false,
@@ -345,7 +361,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_10",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_11",
     "RelativePath": "ProdutosCliente",
     "HttpMethod": "GET",
     "IsController": false,
@@ -363,7 +379,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_16",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_17",
     "RelativePath": "ProdutosCliente",
     "HttpMethod": "POST",
     "IsController": false,
@@ -387,7 +403,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_19",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_20",
     "RelativePath": "ProdutosCliente",
     "HttpMethod": "PUT",
     "IsController": false,
@@ -409,7 +425,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_22",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_23",
     "RelativePath": "ProdutosCliente",
     "HttpMethod": "DELETE",
     "IsController": false,
@@ -431,7 +447,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_13",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_14",
     "RelativePath": "ProdutosCliente/{id:int}",
     "HttpMethod": "GET",
     "IsController": false,

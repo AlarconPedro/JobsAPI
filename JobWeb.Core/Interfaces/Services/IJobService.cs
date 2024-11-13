@@ -10,4 +10,5 @@ namespace JobWeb.Core.Interfaces.Services;
 
 public interface IJobService : ICongelamentoService<TbCongelamento>
 {
+    Task InserirChavesGenericas();
 }

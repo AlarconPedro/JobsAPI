@@ -50,6 +50,8 @@ RecurringJob.AddOrUpdate("Verifica Congelados", (JobService job) => job.Verifica
 app.MapGet("/Devedores", ([FromServices] JobService job) => job.VerificaDevedores());
 app.MapGet("/Congelados", ([FromServices] JobService job) => job.VerificaCongelados());
 
+////////////////////////////////////////////Inserir Chaves Genêricas////////////////////////////////////
+app.MapGet("/InserirChaves", ([FromServices] JobService job) => job.InserirChavesGenericas());
 
 ////////////////////////////////////////////Ações Congelamento//////////////////////////////////////////
 app.MapGet("/Descongelar/{cngCodigo:int}", ([FromServices] JobService job, int cngCodigo) => job.LiberarChaves(cngCodigo));
