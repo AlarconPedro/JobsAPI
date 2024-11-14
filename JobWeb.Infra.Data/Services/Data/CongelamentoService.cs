@@ -1,17 +1,11 @@
 ﻿using ApiJob.Enumerations;
 using ApiJob.Interfaces;
 using ApiJob.Servicos;
-using JobWeb.Core.Interfaces;
 using JobWeb.Core.Interfaces.Services.Data;
 using JobWeb.Infra.Data.Context;
 using JobWeb.Infra.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JobWeb.Infra.Data.Services.Data;
 
@@ -126,7 +120,7 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
         IEnumerable<TbContasreceber> devedores =
                 await _dbContasReceber
             .Where(cr => cr.CtrDatavencimento <= dataHoje
-                && !cr.CtrSituacao.Equals("P")
+                && (!cr.CtrSituacao.Equals("P") && !cr.CtrSituacao.Equals("I"))
                 && (cr.PesCodigoNavigation.PesStatus.Equals("C") && cr.PesCodigoNavigation.PesCliente.Equals("S"))
                 && cr.TbRateiocontasrecebers
                     .Any(rcr => rcr.CtrCodigoNavigation.PesCodigo.Equals(cr.PesCodigo)
@@ -171,21 +165,25 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
         {
             EnviarEmails email = new EnviarEmails();
             string nomes = "";
+
+            if (contasReceber != null)
             foreach (var itemContasReceber in contasReceber)
             {
-
-                //buscar chaves dos produtos do cliente
-                //var produtosCliente = await _dbProdutoCliente
-                //    .Where(pc => pc.ProCodigoNavigation.ProAlias
-                //        .Equals(_dbRateioContasReceber.Where(rcr => rcr.CtrCodigo.Equals(itemContasReceber.CtrCodigo))
-                //            .Select(rcr => rcr.RatCodigoNavigation.RatAlias).Any())
-                //        && (pc.PesCodigoNavigation.PesStatus.Equals("C") && pc.PesCodigoNavigation.PesCliente.Equals("S"))
-                //        && (pc.TbProdutoChaves.Any(x => x.ChaAtivo.Equals(true))))
-                //    .Select(pc => pc.ProCodigoNavigation.ProAlias).ToListAsync();
-
-                List<string> produtosCliente = await _dbRateioContasReceber
-                    .Where(rcr => rcr.CtrCodigo.Equals(itemContasReceber.CtrCodigo))
-                    .Select(rcr => rcr.RatCodigoNavigation.RatAlias).ToListAsync();
+                    //buscar chaves dos produtos do cliente
+                    //var produtosCliente = await _dbProdutoCliente
+                    //    .Where(pc => pc.ProCodigoNavigation.ProAlias
+                    //        .Equals(_dbRateioContasReceber.Where(rcr => rcr.CtrCodigo.Equals(itemContasReceber.CtrCodigo))
+                    //            .Select(rcr => rcr.RatCodigoNavigation.RatAlias).Any())
+                    //        && (pc.PesCodigoNavigation.PesStatus.Equals("C") && pc.PesCodigoNavigation.PesCliente.Equals("S"))
+                    //        && (pc.TbProdutoChaves.Any(x => x.ChaAtivo.Equals(true))))
+                    //    .Select(pc => pc.ProCodigoNavigation.ProAlias).ToListAsync();
+                    List<string> produtosCliente = [];
+                    if (itemContasReceber != null)
+                        produtosCliente = await _dbRateioContasReceber
+                            .Where(rcr => rcr.CtrCodigo.Equals(itemContasReceber.CtrCodigo))
+                            .Select(rcr => rcr.RatCodigoNavigation.RatAlias).ToListAsync();
+                    else
+                        continue;
 
                 if (!produtosCliente.IsNullOrEmpty())
                 foreach (var produto in produtosCliente)
@@ -268,5 +266,24 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
         {
             return "Nenhum Congelamento Pago Encontrado !";
         }
+    }
+
+    public async Task<int> InserirChavesGenericas()
+    {
+        var listaProdutosSemChave = await _dbProdutoCliente.Where(pc => !pc.TbProdutoChaves.Any()).ToListAsync();
+        int qtdProdutos = listaProdutosSemChave.Count();
+        foreach (var produto in listaProdutosSemChave)
+        {
+            var chave = new TbProdutoChave
+            {
+                ChaAtivo = true,
+                ChaCodigo = _dbProdutoChave.Max(pc => pc.ChaCodigo) + 1,
+                ChaKey = "GENÉRICA",
+                ChaObersvacao = "Chave adicionada automaticamente para funcionamento do novo modo de validação",
+                ProcliCodigo = produto.ProcliCodigo,
+            };
+            await _dbProdutoChave.AddAsync(chave);
+        }
+        return qtdProdutos;
     }
 }

@@ -1,14 +1,13 @@
-﻿using JobWeb.Core.Interfaces.Services.Data;
-using JobWeb.Infra.Data.Repositories;
+﻿using JobWeb.Infra.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JobWeb.Core.Interfaces.Services;
+namespace JobWeb.Core.Interfaces.Services.Data;
 
 public interface IJobService : ICongelamentoService<TbCongelamento>
 {
-    Task InserirChavesGenericas();
+    Task<int> InserirChavesGenericas();
 }

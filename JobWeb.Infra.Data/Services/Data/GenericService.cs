@@ -3,12 +3,7 @@ using ApiJob.Interfaces;
 using Hangfire;
 using JobWeb.Core.Interfaces;
 using JobWeb.Infra.Data.Context;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace JobWeb.Infra.Data.Services.Data;
 
