@@ -24,6 +24,7 @@ public class EnviarEmails
             smtp.UseDefaultCredentials = false;
             //smtp.Send(mail);
             //smtp.UseDefaultCredentials = false;
+            smtp.Send(mail);
             codigoJob = BackgroundJob.Enqueue(() => smtp.Send(mail));
         }
         return $"Job ID: {codigoJob}";

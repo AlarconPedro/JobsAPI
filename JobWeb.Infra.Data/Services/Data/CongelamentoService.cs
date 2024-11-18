@@ -164,6 +164,7 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
         if (!contasReceber.IsNullOrEmpty())
         {
             EnviarEmails email = new EnviarEmails();
+            List<string> pessoas = [];
             string nomes = "";
 
             if (contasReceber != null)
@@ -188,18 +189,19 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
                 if (!produtosCliente.IsNullOrEmpty())
                 foreach (var produto in produtosCliente)
                 {
-                    List<TbProdutoChave> chavesCongelamento = await _dbProdutoCliente
-                        .Where(pc => pc.ProCodigoNavigation.ProAlias.Equals(produto)
-                            && pc.PesCodigo.Equals(itemContasReceber.PesCodigo)
-                            && pc.TbProdutoChaves.Any(x => x.ChaAtivo.Equals(true))
-                            && (pc.PesCodigoNavigation.PesStatus.Equals("C") && pc.PesCodigoNavigation.PesCliente.Equals("S")))
-                        .SelectMany(pc => pc.TbProdutoChaves).ToListAsync();
+                List<TbProdutoChave> chavesCongelamento = await _dbProdutoCliente
+                    .Where(pc => pc.ProCodigoNavigation.ProAlias.Equals(produto)
+                        && pc.PesCodigo.Equals(itemContasReceber.PesCodigo)
+                        && pc.TbProdutoChaves.Any(x => x.ChaAtivo.Equals(true))
+                        && (pc.PesCodigoNavigation.PesStatus.Equals("C") && pc.PesCodigoNavigation.PesCliente.Equals("S")))
+                    .SelectMany(pc => pc.TbProdutoChaves).ToListAsync();
 
                     foreach (var congelar in chavesCongelamento)
                     {
                         try
                         {
-                            TbCongelamento congelamentos = new TbCongelamento {
+                            TbCongelamento congelamentos = new TbCongelamento
+                            {
                                 ChaCodigo = congelar.ChaCodigo,
                                 ChaCodigoNavigation = congelar,
                                 CngAvisocobranca = false,
@@ -227,16 +229,21 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
                                 congelamentos.CngCodigo = 1;
                             }
                             await InserirCongelamento(congelamentos);
+                            pessoas.Add(await _dbProdutoCliente.Where(pc => pc.PesCodigoNavigation.PesCodigo.Equals(itemContasReceber.PesCodigo)).Select(x => x.PesCodigoNavigation.PesNome).FirstOrDefaultAsync());
                         }
                         catch (Exception e)
                         {
                             throw new Exception(e.Message);
                         }
-                        nomes +=  _dbProdutoCliente.Where(pc => pc.PesCodigoNavigation.PesCodigo.Equals(itemContasReceber.PesCodigo)).Select(x => x.PesCodigoNavigation.PesNome) + ", ";
+
+                        if (!pessoas.IsNullOrEmpty())
+                            foreach (var pessoa in pessoas)
+                                nomes += pessoa + ", ";
                     }
                 }
             }
-            email.enviaEmail(nomes, "AvisoCobranca");
+            if (!nomes.IsNullOrEmpty())
+                email.enviaEmail(nomes, "AvisoCobranca");
             return $"{devedores.Count().ToString()} Devedores Encontrados !";
         }
         return "Nenhum Devedor Encontrado !";

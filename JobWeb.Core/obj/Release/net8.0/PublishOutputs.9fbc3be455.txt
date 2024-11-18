@@ -1,0 +1,3 @@
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\bin\Release\net8.0\publish\JobWeb.Core.dll
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\bin\Release\net8.0\publish\JobWeb.Core.deps.json
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\bin\Release\net8.0\publish\JobWeb.Core.pdb

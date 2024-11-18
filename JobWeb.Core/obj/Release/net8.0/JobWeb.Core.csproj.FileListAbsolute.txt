@@ -1,0 +1,12 @@
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\bin\Release\net8.0\JobWeb.Core.deps.json
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\bin\Release\net8.0\JobWeb.Core.dll
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\bin\Release\net8.0\JobWeb.Core.pdb
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\JobWeb.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\JobWeb.Core.AssemblyInfoInputs.cache
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\JobWeb.Core.AssemblyInfo.cs
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\JobWeb.Core.csproj.CoreCompileInputs.cache
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\JobWeb.Core.sourcelink.json
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\JobWeb.Core.dll
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\refint\JobWeb.Core.dll
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\JobWeb.Core.pdb
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\ref\JobWeb.Core.dll

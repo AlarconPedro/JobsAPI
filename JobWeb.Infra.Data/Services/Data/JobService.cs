@@ -25,10 +25,11 @@ public class JobService : CongelamentoService<TbCongelamento>, IJobService
     public async Task<int> InserirChavesGenericas()
     {
         var produtos = await _produtoCliente
-            .Where(pc => (pc.PesCodigoNavigation.PesStatus.Equals("C") && pc.PesCodigoNavigation.PesCliente.Equals("S")) 
-                && !pc.TbProdutoChaves.Any())
-            .ToListAsync();
+        .Where(pc => (pc.PesCodigoNavigation.PesStatus.Equals("C") && pc.PesCodigoNavigation.PesCliente.Equals("S"))
+            && !pc.TbProdutoChaves.Any())
+        .ToListAsync();
         foreach (var produto in produtos)
+        {
             _produtoChave.Add(new TbProdutoChave
             {
                 ChaAtivo = true,
@@ -37,9 +38,8 @@ public class JobService : CongelamentoService<TbCongelamento>, IJobService
                 ChaObersvacao = "Chave adicionada automáticamente para funcionar o novo modo de validação do sistema",
                 ProcliCodigo = produto.ProcliCodigo,
             });
-
-        await _context.SaveChangesAsync();
-
+            await _context.SaveChangesAsync();
+        }
         return produtos.Count;
     }
 }
