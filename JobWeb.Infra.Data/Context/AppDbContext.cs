@@ -17,6 +17,7 @@ public partial class AppDbContext : DbContext
     public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration)
         : base(options)
     {
+        ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         Configuration = configuration;
     }
 

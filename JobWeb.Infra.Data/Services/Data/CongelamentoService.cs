@@ -126,7 +126,7 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
                     .Any(rcr => rcr.CtrCodigoNavigation.PesCodigo.Equals(cr.PesCodigo)
                         && rcr.RatCodigoNavigation.RatAlias
                             .Equals(cr.PesCodigoNavigation.TbProdutoClientes
-                                .Select(pc => pc.ProCodigoNavigation.ProAlias).FirstOrDefault()))
+                            .Select(pc => pc.ProCodigoNavigation.ProAlias).First()))
                         && !_dbCongelamento
                             .Any(c => c.CtrCodigo.Equals(cr.CtrCodigo)
                                 && c.CngStatus.Equals("A"))).ToListAsync();
@@ -190,8 +190,9 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
                 {
                     List<TbProdutoChave> chavesCongelamento = await _dbProdutoCliente
                         .Where(pc => pc.ProCodigoNavigation.ProAlias.Equals(produto)
-                            && (pc.PesCodigoNavigation.PesStatus.Equals("C") && pc.PesCodigoNavigation.PesCliente.Equals("S"))
-                            && (pc.TbProdutoChaves.Any(x => x.ChaAtivo.Equals(true))))
+                            && pc.PesCodigo.Equals(itemContasReceber.PesCodigo)
+                            && pc.TbProdutoChaves.Any(x => x.ChaAtivo.Equals(true))
+                            && (pc.PesCodigoNavigation.PesStatus.Equals("C") && pc.PesCodigoNavigation.PesCliente.Equals("S")))
                         .SelectMany(pc => pc.TbProdutoChaves).ToListAsync();
 
                     foreach (var congelar in chavesCongelamento)
