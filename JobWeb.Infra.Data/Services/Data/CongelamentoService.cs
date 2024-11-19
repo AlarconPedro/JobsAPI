@@ -118,18 +118,33 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
         DateOnly dataHoje = DateOnly.FromDateTime(DateTime.Now);
 
         IEnumerable<TbContasreceber> devedores =
-                await _dbContasReceber
-            .Where(cr => cr.CtrDatavencimento <= dataHoje
-                && (!cr.CtrSituacao.Equals("P") && !cr.CtrSituacao.Equals("I"))
-                && (cr.PesCodigoNavigation.PesStatus.Equals("C") && cr.PesCodigoNavigation.PesCliente.Equals("S"))
-                && cr.TbRateiocontasrecebers
-                    .Any(rcr => rcr.CtrCodigoNavigation.PesCodigo.Equals(cr.PesCodigo)
-                        && rcr.RatCodigoNavigation.RatAlias
-                            .Equals(cr.PesCodigoNavigation.TbProdutoClientes
-                            .Select(pc => pc.ProCodigoNavigation.ProAlias).First()))
-                        && !_dbCongelamento
-                            .Any(c => c.CtrCodigo.Equals(cr.CtrCodigo)
-                                && c.CngStatus.Equals("A"))).ToListAsync();
+                await _dbContasReceber.Where(cr => cr.CtrDatavencimento <= dataHoje
+                    && (!cr.CtrSituacao.Equals("P") && !cr.CtrSituacao.Equals("I"))
+                    && (cr.PesCodigoNavigation.PesStatus.Equals("C") && cr.PesCodigoNavigation.PesCliente.Equals("S"))
+                    && cr.TbRateiocontasrecebers
+                        .Any(rcr => rcr.CtrCodigoNavigation.PesCodigo.Equals(cr.PesCodigo)
+                            && rcr.RatCodigoNavigation.RatAlias
+                                .Equals(cr.PesCodigoNavigation.TbProdutoClientes
+                                .Select(pc => pc.ProCodigoNavigation.ProAlias).First()))
+                            && !_dbCongelamento
+                                .Any(c => c.CtrCodigo.Equals(cr.CtrCodigo)
+                                    && c.CngStatus.Equals("A"))).ToListAsync();
+
+        //.Join(_dbRateioContasReceber, cr => cr.CtrCodigo, rcr => rcr.CtrCodigo, (cr, rcr) => new {cr, rcr})
+        //.Where(x => x.cr.CtrDatavencimento <= dataHoje
+        //    && (!x.cr.CtrSituacao.Equals("P") && !x.cr.CtrSituacao.Equals("I"))
+        //    && (x.cr.PesCodigoNavigation.PesStatus.Equals("C") && x.cr.PesCodigoNavigation.PesCliente.Equals("S"))
+        //    && x.cr.TbRateiocontasrecebers
+        //        .Any(rcr => rcr.CtrCodigoNavigation.PesCodigo.Equals(x.cr.PesCodigo)
+        //            && rcr.RatCodigoNavigation.RatAlias
+        //                .Equals(x.cr.PesCodigoNavigation.TbProdutoClientes
+        //                .Select(pc => pc.ProCodigoNavigation.ProAlias).First()))
+        //            && !_dbCongelamento
+        //                .Any(c => c.CtrCodigo.Equals(x.cr.CtrCodigo)
+        //                    && c.CngStatus.Equals("A"))).Select(x => x.cr).ToListAsync();
+
+
+
 
         List<TbContasreceber> contasReceber = [];
         if (!devedores.IsNullOrEmpty())
