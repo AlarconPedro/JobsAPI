@@ -190,11 +190,20 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
                 foreach (var produto in produtosCliente)
                 {
                 List<TbProdutoChave> chavesCongelamento = await _dbProdutoCliente
-                    .Where(pc => pc.ProCodigoNavigation.ProAlias.Equals(produto)
-                        && pc.PesCodigo.Equals(itemContasReceber.PesCodigo)
-                        && pc.TbProdutoChaves.Any(x => x.ChaAtivo.Equals(true))
-                        && (pc.PesCodigoNavigation.PesStatus.Equals("C") && pc.PesCodigoNavigation.PesCliente.Equals("S")))
-                    .SelectMany(pc => pc.TbProdutoChaves).ToListAsync();
+                    .Join(_dbProdutoChave, pc => pc.ProcliCodigo, pcha => pcha.ProcliCodigo, (pc, pcha) => new {pc, pcha})
+                    .Where(x => x.pc.ProCodigoNavigation.ProAlias.Equals(produto) 
+                        && x.pc.PesCodigo.Equals(itemContasReceber.PesCodigo)
+                        && x.pc.PesCodigoNavigation.PesStatus.Equals("C")
+                        && x.pc.PesCodigoNavigation.PesCliente.Equals("S")
+                        && x.pcha.ChaAtivo.Equals(true))
+                    .Select(x => x.pcha).ToListAsync();
+                            //.Where(pc => pc.ProCodigoNavigation.ProAlias.Equals(produto)
+                            //    && (pc.PesCodigo.Equals(itemContasReceber.PesCodigo))
+                            //    //pegar somente a chave que estiver ativa
+
+                            //    //&& (pc.TbProdutoChaves.All(x => x.ChaAtivo.Equals(true)))
+                            //    && (pc.PesCodigoNavigation.PesStatus.Equals("C") && pc.PesCodigoNavigation.PesCliente.Equals("S")))
+                            //.SelectMany(pc => pc.TbProdutoChaves).ToListAsync();
 
                     foreach (var congelar in chavesCongelamento)
                     {
