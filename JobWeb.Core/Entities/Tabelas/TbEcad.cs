@@ -7,7 +7,7 @@ public partial class TbEcad
 {
     public int EcaCodigo { get; set; }
 
-    public DateOnly? EcaData { get; set; }
+    public DateTime? EcaData { get; set; }
 
     public string? EcaHora { get; set; }
 

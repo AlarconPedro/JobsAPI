@@ -17,7 +17,7 @@ public partial class TbContaspagariten
 
     public decimal? CpiValorpago { get; set; }
 
-    public DateOnly? CpiDatapago { get; set; }
+    public DateTime? CpiDatapago { get; set; }
 
     public string? CpiTipopag { get; set; }
 

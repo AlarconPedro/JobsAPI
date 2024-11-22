@@ -954,6 +954,10 @@ public partial class AppDbContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("CFE_SENHAEMAIL");
+            entity.Property(e => e.CfeCodigoEcad)
+               .HasMaxLength(20)
+               .IsUnicode(false)
+               .HasColumnName("CFE_CODIGO_ECAD");
             entity.Property(e => e.CfeTempolembrete).HasColumnName("CFE_TEMPOLEMBRETE");
             entity.Property(e => e.CfeTextocontrato)
                 .HasColumnType("text")

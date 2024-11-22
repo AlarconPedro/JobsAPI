@@ -57,7 +57,7 @@ public partial class TbBoleto
 
     public decimal? BolValorrecebido { get; set; }
 
-    public DateOnly? BolDatarecebimento { get; set; }
+    public DateTime? BolDatarecebimento { get; set; }
 
     public int? CtcCodigo { get; set; }
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xFp7HBsQchk=",
+  "dgSpecHash": "4zrB8gMQPac=",
   "success": true,
   "projectFilePath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\Pedro\\.nuget\\packages\\hangfire.netcore\\1.8.15\\hangfire.netcore.1.8.15.nupkg.sha512",
     "C:\\Users\\Pedro\\.nuget\\packages\\hangfire.sqlserver\\1.8.15\\hangfire.sqlserver.1.8.15.nupkg.sha512",
     "C:\\Users\\Pedro\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Pedro\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Pedro\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\Pedro\\.nuget\\packages\\microsoft.build.framework\\17.8.3\\microsoft.build.framework.17.8.3.nupkg.sha512",
     "C:\\Users\\Pedro\\.nuget\\packages\\microsoft.build.locator\\1.7.8\\microsoft.build.locator.1.7.8.nupkg.sha512",

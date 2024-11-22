@@ -115,7 +115,7 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
     {
         //System.Diagnostics.Process.Start("notepad.exe", "/p C:\\Omega\\teste.txt");
         //return "Foi";
-        DateOnly dataHoje = DateOnly.FromDateTime(DateTime.Now);
+        DateTime dataHoje = DateTime.Now;
 
         IEnumerable<TbContasreceber> devedores =
                 await _dbContasReceber.Where(cr => cr.CtrDatavencimento <= dataHoje
@@ -129,22 +129,6 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
                             && !_dbCongelamento
                                 .Any(c => c.CtrCodigo.Equals(cr.CtrCodigo)
                                     && c.CngStatus.Equals("A"))).ToListAsync();
-
-        //.Join(_dbRateioContasReceber, cr => cr.CtrCodigo, rcr => rcr.CtrCodigo, (cr, rcr) => new {cr, rcr})
-        //.Where(x => x.cr.CtrDatavencimento <= dataHoje
-        //    && (!x.cr.CtrSituacao.Equals("P") && !x.cr.CtrSituacao.Equals("I"))
-        //    && (x.cr.PesCodigoNavigation.PesStatus.Equals("C") && x.cr.PesCodigoNavigation.PesCliente.Equals("S"))
-        //    && x.cr.TbRateiocontasrecebers
-        //        .Any(rcr => rcr.CtrCodigoNavigation.PesCodigo.Equals(x.cr.PesCodigo)
-        //            && rcr.RatCodigoNavigation.RatAlias
-        //                .Equals(x.cr.PesCodigoNavigation.TbProdutoClientes
-        //                .Select(pc => pc.ProCodigoNavigation.ProAlias).First()))
-        //            && !_dbCongelamento
-        //                .Any(c => c.CtrCodigo.Equals(x.cr.CtrCodigo)
-        //                    && c.CngStatus.Equals("A"))).Select(x => x.cr).ToListAsync();
-
-
-
 
         List<TbContasreceber> contasReceber = [];
         if (!devedores.IsNullOrEmpty())
@@ -186,13 +170,6 @@ public class CongelamentoService<T> : GenericService<TbCongelamento>, ICongelame
             foreach (var itemContasReceber in contasReceber)
             {
                     //buscar chaves dos produtos do cliente
-                    //var produtosCliente = await _dbProdutoCliente
-                    //    .Where(pc => pc.ProCodigoNavigation.ProAlias
-                    //        .Equals(_dbRateioContasReceber.Where(rcr => rcr.CtrCodigo.Equals(itemContasReceber.CtrCodigo))
-                    //            .Select(rcr => rcr.RatCodigoNavigation.RatAlias).Any())
-                    //        && (pc.PesCodigoNavigation.PesStatus.Equals("C") && pc.PesCodigoNavigation.PesCliente.Equals("S"))
-                    //        && (pc.TbProdutoChaves.Any(x => x.ChaAtivo.Equals(true))))
-                    //    .Select(pc => pc.ProCodigoNavigation.ProAlias).ToListAsync();
                     List<string> produtosCliente = [];
                     if (itemContasReceber != null)
                         produtosCliente = await _dbRateioContasReceber

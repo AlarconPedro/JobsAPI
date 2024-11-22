@@ -63,7 +63,7 @@ public partial class TbPessoa
 
     public string? PesContato { get; set; }
 
-    public DateOnly? PesClientedesde { get; set; }
+    public DateTime? PesClientedesde { get; set; }
 
     public string? PesGuid { get; set; }
 

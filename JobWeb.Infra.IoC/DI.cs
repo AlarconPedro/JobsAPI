@@ -30,9 +30,17 @@ public static class DI
 
         services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
         services.AddScoped(typeof(ICongelamentoService<>), typeof(CongelamentoService<>));
-        services.AddScoped(typeof(IProdutoService<>), typeof(ProdutosService<>));
+        services.AddScoped(typeof(IValidacaoService<>), typeof(ValidacaoService<>));
+        services.AddScoped<IProdutoService, ProdutosService>();
+        services.AddScoped<IProdutoClienteService, ProdutoClienteService>();
+        services.AddScoped<IProdutoChaveService, ProdutoChaveService>();
         services.AddScoped<IJobService, JobService>();
-        
+        services.AddScoped<ILoginService, LoginService>();
+        services.AddScoped<IRelatorioService, RelatorioService>();
+        services.AddScoped<IReplicacaoDadosService, ReplicacaoDadosServcice>();
+        services.AddScoped<IUsuarioService, UsuarioService>();
+        services.AddScoped<IEmpresaService, EmpresaService>();
+
         //services.AddScoped(typeof(IJobRepository<>), typeof(JobService<>));
 
         services.AddMemoryCache();
@@ -54,7 +62,6 @@ public static class DI
         //services.AddHangfire(x => x.UseSqlServerStorage(configuration.GetConnectionString(connectionString)));
         services.AddHangfire(config => config.UseMemoryStorage());
         GlobalConfiguration.Configuration.UseMemoryStorage();
-        services.AddHangfireServer();
         
         services.AddAuthorization();
         services.AddHangfireServer();

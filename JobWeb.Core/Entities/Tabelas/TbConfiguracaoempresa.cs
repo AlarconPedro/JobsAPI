@@ -91,6 +91,8 @@ public partial class TbConfiguracaoempresa
 
     public string? CfeOnesignalRestApiKey { get; set; }
 
+    public string? CfeCodigoEcad { get; set; }
+
     public virtual TbEmpresa? EmpCodigoNavigation { get; set; }
 
     public virtual TbPlanodeconta? PlcCodigoComissaoNavigation { get; set; }

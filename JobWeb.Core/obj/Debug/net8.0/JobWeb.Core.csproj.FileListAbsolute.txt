@@ -21,3 +21,4 @@ D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Debug\net8.0\JobWeb.Core
 D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Debug\net8.0\refint\JobWeb.Core.dll
 D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Debug\net8.0\JobWeb.Core.pdb
 D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Debug\net8.0\ref\JobWeb.Core.dll
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Debug\net8.0\JobWeb.Core.csproj.AssemblyReference.cache

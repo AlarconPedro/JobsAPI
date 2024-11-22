@@ -17,7 +17,7 @@ public partial class TbContasreceberiten
 
     public decimal? CriValorpago { get; set; }
 
-    public DateOnly? CriDatapago { get; set; }
+    public DateTime? CriDatapago { get; set; }
 
     public string? CriTipopag { get; set; }
 

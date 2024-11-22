@@ -13,9 +13,9 @@ public partial class TbContaspagar
 
     public int? PlcCodigo { get; set; }
 
-    public DateOnly? CtpData { get; set; }
+    public DateTime? CtpData { get; set; }
 
-    public DateOnly? CtpDatavencimento { get; set; }
+    public DateTime? CtpDatavencimento { get; set; }
 
     public decimal? CtpValor { get; set; }
 

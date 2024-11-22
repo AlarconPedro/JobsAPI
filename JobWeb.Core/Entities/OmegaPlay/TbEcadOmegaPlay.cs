@@ -1,4 +1,5 @@
-﻿using OmegaCloudAPI.Models;
+﻿using JobWeb.Infra.Data.Repositories;
+using OmegaCloudAPI.Models;
 using System;
 using System.Collections.Generic;
 

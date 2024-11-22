@@ -213,10 +213,10 @@ public class ValidacaoService<T> : GenericService<T>, IValidacaoService<T> where
             else
             {
                 var primeiroVencimento = await _contasReceber
-                    .Where(p => p.PesCodigo == retornoPessoaAtivaProduto.PesCodigo && p.CtrDatavencimento > DateOnly.Parse(DateTime.Today.ToString()))
+                    .Where(p => p.PesCodigo == retornoPessoaAtivaProduto.PesCodigo && p.CtrDatavencimento > DateTime.Parse(DateTime.Today.ToString()))
                     .OrderBy(p => p.CtrDatavencimento)
                     .Select(z => z.CtrDatavencimento)
-                    .FirstOrDefaultAsync() ?? DateOnly.MinValue;
+                    .FirstOrDefaultAsync() ?? DateTime.MinValue;
 
                 if (primeiroVencimento != null)
                 {

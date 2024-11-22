@@ -10,3 +10,4 @@ D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\JobWeb.Co
 D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\refint\JobWeb.Core.dll
 D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\JobWeb.Core.pdb
 D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\ref\JobWeb.Core.dll
+D:\Desenvolvimento\C#\Prototipos\JobAPI\JobWeb.Core\obj\Release\net8.0\JobWeb.Core.csproj.AssemblyReference.cache

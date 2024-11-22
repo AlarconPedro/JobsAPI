@@ -17,11 +17,11 @@ public partial class TbContrato
 
     public string? CntPi { get; set; }
 
-    public DateOnly? CntData { get; set; }
+    public DateTime? CntData { get; set; }
 
-    public DateOnly? CntInicio { get; set; }
+    public DateTime? CntInicio { get; set; }
 
-    public DateOnly? CntTermino { get; set; }
+    public DateTime? CntTermino { get; set; }
 
     public int? CntQtdinsercao { get; set; }
 

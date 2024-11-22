@@ -13,7 +13,7 @@ public partial class TbContainvestimento
 
     public int? PlcCodigo { get; set; }
 
-    public DateOnly? CinData { get; set; }
+    public DateTime? CinData { get; set; }
 
     public decimal? CinValor { get; set; }
 

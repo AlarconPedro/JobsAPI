@@ -15,9 +15,9 @@ public partial class TbContasreceber
 
     public int? CntCodigo { get; set; }
 
-    public DateOnly? CtrData { get; set; }
+    public DateTime? CtrData { get; set; }
 
-    public DateOnly? CtrDatavencimento { get; set; }
+    public DateTime? CtrDatavencimento { get; set; }
 
     public decimal? CtrValor { get; set; }
 
@@ -37,9 +37,9 @@ public partial class TbContasreceber
 
     public string? CtrObservacao { get; set; }
 
-    public DateOnly? CtrPeriodoinicio { get; set; }
+    public DateTime? CtrPeriodoinicio { get; set; }
 
-    public DateOnly? CtrPeriodofim { get; set; }
+    public DateTime? CtrPeriodofim { get; set; }
 
     public string? CtrBoleto { get; set; }
 
@@ -59,7 +59,7 @@ public partial class TbContasreceber
 
     public string? CtrSemregistro { get; set; }
 
-    public DateOnly? CtrDatavencimentobase { get; set; }
+    public DateTime? CtrDatavencimentobase { get; set; }
 
     public string? CtrNumdoc { get; set; }
 
