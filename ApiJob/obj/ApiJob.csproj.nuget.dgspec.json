@@ -4,108 +4,14 @@
     "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\ApiJob.csproj": {}
   },
   "projects": {
-    "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\ApiJob.csproj": {
+    "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Core\\ApiWeb.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\ApiJob.csproj",
-        "projectName": "ApiJob",
-        "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\ApiJob.csproj",
+        "projectUniqueName": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Core\\ApiWeb.Core.csproj",
+        "projectName": "ApiWeb.Core",
+        "projectPath": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Core\\ApiWeb.Core.csproj",
         "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-        "outputPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {
-              "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.IoC\\JobWeb.Infra.IoC.csproj": {
-                "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.IoC\\JobWeb.Infra.IoC.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\JobWeb.Core.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\JobWeb.Core.csproj",
-        "projectName": "JobWeb.Core",
-        "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\JobWeb.Core.csproj",
-        "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-        "outputPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\obj\\",
+        "outputPath": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -142,7 +48,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[6.0.0-preview.4.21253.5, )"
             }
           },
           "imports": [
@@ -165,14 +71,14 @@
         }
       }
     },
-    "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj": {
+    "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.Data\\ApiWeb.Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj",
-        "projectName": "JobWeb.Infra.Data",
-        "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj",
+        "projectUniqueName": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.Data\\ApiWeb.Infra.Data.csproj",
+        "projectName": "ApiWeb.Infra.Data",
+        "projectPath": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.Data\\ApiWeb.Infra.Data.csproj",
         "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-        "outputPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\obj\\",
+        "outputPath": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -190,8 +96,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\JobWeb.Core.csproj": {
-                "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\JobWeb.Core.csproj"
+              "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Core\\ApiWeb.Core.csproj": {
+                "projectPath": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Core\\ApiWeb.Core.csproj"
               }
             }
           }
@@ -268,14 +174,14 @@
         }
       }
     },
-    "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.IoC\\JobWeb.Infra.IoC.csproj": {
+    "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.IoC\\ApiWeb.Infra.IoC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.IoC\\JobWeb.Infra.IoC.csproj",
-        "projectName": "JobWeb.Infra.IoC",
-        "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.IoC\\JobWeb.Infra.IoC.csproj",
+        "projectUniqueName": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.IoC\\ApiWeb.Infra.IoC.csproj",
+        "projectName": "ApiWeb.Infra.IoC",
+        "projectPath": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.IoC\\ApiWeb.Infra.IoC.csproj",
         "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-        "outputPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.IoC\\obj\\",
+        "outputPath": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.IoC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -293,11 +199,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\JobWeb.Core.csproj": {
-                "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Core\\JobWeb.Core.csproj"
+              "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Core\\ApiWeb.Core.csproj": {
+                "projectPath": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Core\\ApiWeb.Core.csproj"
               },
-              "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj": {
-                "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\JobWeb.Infra.Data\\JobWeb.Infra.Data.csproj"
+              "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.Data\\ApiWeb.Infra.Data.csproj": {
+                "projectPath": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.Data\\ApiWeb.Infra.Data.csproj"
               }
             }
           }
@@ -350,6 +256,100 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\ApiJob.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\ApiJob.csproj",
+        "projectName": "ApiJob",
+        "projectPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\ApiJob.csproj",
+        "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
+        "outputPath": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.IoC\\ApiWeb.Infra.IoC.csproj": {
+                "projectPath": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.IoC\\ApiWeb.Infra.IoC.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

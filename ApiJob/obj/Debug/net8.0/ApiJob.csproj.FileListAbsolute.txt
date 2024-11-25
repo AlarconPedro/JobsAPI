@@ -376,12 +376,6 @@ D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\runtimes\win\lib
 D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\JobWeb.Core.dll
-D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\JobWeb.Infra.Data.dll
-D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\JobWeb.Infra.IoC.dll
-D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\JobWeb.Infra.IoC.pdb
-D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\JobWeb.Core.pdb
-D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\JobWeb.Infra.Data.pdb
 D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\obj\Debug\net8.0\ApiJob.csproj.AssemblyReference.cache
 D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\obj\Debug\net8.0\ApiJob.GeneratedMSBuildEditorConfig.editorconfig
 D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\obj\Debug\net8.0\ApiJob.AssemblyInfoInputs.cache
@@ -404,3 +398,9 @@ D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\obj\Debug\net8.0\refint\ApiJob.dl
 D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\obj\Debug\net8.0\ApiJob.pdb
 D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\obj\Debug\net8.0\ApiJob.genruntimeconfig.cache
 D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\obj\Debug\net8.0\ref\ApiJob.dll
+D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\ApiWeb.Core.dll
+D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\ApiWeb.Infra.Data.dll
+D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\ApiWeb.Infra.IoC.dll
+D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\ApiWeb.Infra.IoC.pdb
+D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\ApiWeb.Core.pdb
+D:\Desenvolvimento\C#\Prototipos\JobAPI\ApiJob\bin\Debug\net8.0\ApiWeb.Infra.Data.pdb

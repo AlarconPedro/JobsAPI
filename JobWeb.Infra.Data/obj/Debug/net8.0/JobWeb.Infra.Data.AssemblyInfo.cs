@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JobWeb.Infra.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08679c752cd762f1eb863063d6b83c5e06aee41d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fec23eeb1e787054f2eaeb3de98cdab6e8397e27")]
 [assembly: System.Reflection.AssemblyProductAttribute("JobWeb.Infra.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JobWeb.Infra.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

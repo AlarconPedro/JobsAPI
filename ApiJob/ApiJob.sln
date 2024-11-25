@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiJob", "ApiJob.csproj", "{AF8D99D3-4C7C-41F8-937C-D4081918BA80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiJob", "ApiJob.csproj", "{AF8D99D3-4C7C-41F8-937C-D4081918BA80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobWeb.Core", "..\JobWeb.Core\JobWeb.Core.csproj", "{73DF5FF3-D7B4-4724-AD61-7A1BC7953563}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiWeb.Core", "..\..\..\APICore\ApiWeb.Core\ApiWeb.Core.csproj", "{94C05057-FD45-4E5E-A5AB-B4DF2796741A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobWeb.Infra.Data", "..\JobWeb.Infra.Data\JobWeb.Infra.Data.csproj", "{C4009A90-4B0E-4603-A674-6482013865F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiWeb.Infra.Data", "..\..\..\APICore\ApiWeb.Infra.Data\ApiWeb.Infra.Data.csproj", "{5ECAD90B-FEFD-4451-8CF8-D23F652FD3F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobWeb.Infra.IoC", "..\JobWeb.Infra.IoC\JobWeb.Infra.IoC.csproj", "{807B4D0B-9EE1-4170-8F72-56F98277D0A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiWeb.Infra.IoC", "..\..\..\APICore\ApiWeb.Infra.IoC\ApiWeb.Infra.IoC.csproj", "{29E770FB-0846-421C-AE79-6E81FF5B7330}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{AF8D99D3-4C7C-41F8-937C-D4081918BA80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF8D99D3-4C7C-41F8-937C-D4081918BA80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF8D99D3-4C7C-41F8-937C-D4081918BA80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73DF5FF3-D7B4-4724-AD61-7A1BC7953563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73DF5FF3-D7B4-4724-AD61-7A1BC7953563}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73DF5FF3-D7B4-4724-AD61-7A1BC7953563}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73DF5FF3-D7B4-4724-AD61-7A1BC7953563}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C4009A90-4B0E-4603-A674-6482013865F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4009A90-4B0E-4603-A674-6482013865F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4009A90-4B0E-4603-A674-6482013865F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4009A90-4B0E-4603-A674-6482013865F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{807B4D0B-9EE1-4170-8F72-56F98277D0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{807B4D0B-9EE1-4170-8F72-56F98277D0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{807B4D0B-9EE1-4170-8F72-56F98277D0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{807B4D0B-9EE1-4170-8F72-56F98277D0A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94C05057-FD45-4E5E-A5AB-B4DF2796741A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C05057-FD45-4E5E-A5AB-B4DF2796741A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C05057-FD45-4E5E-A5AB-B4DF2796741A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C05057-FD45-4E5E-A5AB-B4DF2796741A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ECAD90B-FEFD-4451-8CF8-D23F652FD3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ECAD90B-FEFD-4451-8CF8-D23F652FD3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ECAD90B-FEFD-4451-8CF8-D23F652FD3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ECAD90B-FEFD-4451-8CF8-D23F652FD3F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E770FB-0846-421C-AE79-6E81FF5B7330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E770FB-0846-421C-AE79-6E81FF5B7330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E770FB-0846-421C-AE79-6E81FF5B7330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E770FB-0846-421C-AE79-6E81FF5B7330}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

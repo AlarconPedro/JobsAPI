@@ -3,8 +3,6 @@ using Hangfire;
 using JobWeb.Core.Interfaces.Services.Data;
 using JobWeb.Core.Interfaces.Services.Entities;
 using JobWeb.Infra.Data.Repositories;
-using JobWeb.Infra.Data.Services.Data;
-using JobWeb.Infra.Data.Services.Entities;
 using JobWeb.Infra.IoC;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,7 +34,6 @@ app.UseAuthorization();
 app.UseHangfireDashboard("/Jobs");
 
 //Jobs
-
 //Jobs Diários
 RecurringJob.AddOrUpdate("Verifica Devedores", (IJobService job) => job.VerificaDevedores(), Cron.Minutely);
 RecurringJob.AddOrUpdate("Envia Avisos", (IJobService job) => job.EnviaAvisos(), Cron.Minutely);
