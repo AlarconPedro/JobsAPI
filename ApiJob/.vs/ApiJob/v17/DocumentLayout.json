@@ -20,7 +20,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,19 +33,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CongelamentoService.cs",
-              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.Data\\Services\\Data\\CongelamentoService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\APICore\\ApiWeb.Infra.Data\\Services\\Data\\CongelamentoService.cs",
-              "ToolTip": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.Data\\Services\\Data\\CongelamentoService.cs",
-              "RelativeToolTip": "..\\..\\..\\APICore\\ApiWeb.Infra.Data\\Services\\Data\\CongelamentoService.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAArwGEAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T14:11:08.278Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -67,10 +54,22 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Desenvolvimento\\C#\\Prototipos\\JobAPI\\ApiJob\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAYwDIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T12:43:57.904Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CongelamentoService.cs",
+              "DocumentMoniker": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.Data\\Services\\Data\\CongelamentoService.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\APICore\\ApiWeb.Infra.Data\\Services\\Data\\CongelamentoService.cs",
+              "ToolTip": "D:\\Desenvolvimento\\C#\\APICore\\ApiWeb.Infra.Data\\Services\\Data\\CongelamentoService.cs",
+              "RelativeToolTip": "..\\..\\..\\APICore\\ApiWeb.Infra.Data\\Services\\Data\\CongelamentoService.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAArwHAAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:11:08.278Z"
             }
           ]
         }
